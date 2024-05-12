@@ -1,0 +1,92 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --main-color: #f3f3f3;
+  --sub-color: #2c7dfa;
+
+  --main-bg-color: #1e1f22;
+  --sub-bg-color: #2b2c2f;
+
+  --main-font: 'Raleway';
+}
+
+body {
+  background: var(--main-bg-color);
+  font-family: var(--main-font);
+  color: var(--main-color);
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 56px;
+  border-bottom: 12px solid var(--sub-bg-color);
+}
+
+.header__logo {
+  font-size: 20px;
+}
+
+.header__columns {
+  display: flex;
+}
+
+.header__columns > button {
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 0;
+  background-color: var(--main-bg-color);
+  color: var(--main-color);
+}
+
+.header__columns > button.active {
+  background-color: var(--sub-color);
+}
+
+.header__outline,
+.header__dark-mode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__toggle {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.header__toggle + label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 40px;
+  height: 12px;
+  background: grey;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+}
+
+.header__toggle + label:after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 0px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+.header__toggle:checked + label {
+  background: var(--sub-color);
+}
+
+.header__toggle:checked + label:after {
+  left: 100%;
+  transform: translateX(-100%);
+}
