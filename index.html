@@ -26,6 +26,39 @@
         <label for="darkMode"></label>
       </div>
     </header>
-    <main></main>
+    <main>
+      <div class="viewer__container">
+        <div class="viewer">
+          <div class="viewer__header">
+            <div class="viewer__header__title">
+              <h3>Title</h3>
+              <button type="button" class="btn_clear">
+                <i class="xi xi-trash"></i>&nbsp;Clear All
+              </button>
+            </div>
+            <div class="viewer__header__text">
+              <input type="text" placeholder="제목을 입력하세요." />
+            </div>
+          </div>
+          <div class="viewer__contents">
+            <div class="viewer__file__container">
+              <label class="viewer__file" for="imgFile">
+                <i class="xi xi-plus-min"></i>&nbsp;Open Images
+              </label>
+              <input type="file" id="imgFile" />
+            </div>
+
+            <div class="viewer__images"></div>
+          </div>
+
+          <div class="viewer__footer">
+            <div class="viewer__total">
+              <span>Total</span>
+              <span class="viewer__total__number">20</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>

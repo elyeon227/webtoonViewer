@@ -1,4 +1,6 @@
 @import url(reset.css);
+@import url(normalize.css);
+@import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
@@ -8,7 +10,13 @@
   --main-bg-color: #1e1f22;
   --sub-bg-color: #2b2c2f;
 
+  --main-txt-color: #767e8b;
+
   --main-font: 'Raleway';
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -62,6 +70,7 @@ header {
 .header__toggle + label {
   cursor: pointer;
   text-indent: -9999px;
+  margin-left: 10px;
   width: 40px;
   height: 12px;
   background: grey;
@@ -89,4 +98,83 @@ header {
 .header__toggle:checked + label:after {
   left: 100%;
   transform: translateX(-100%);
+}
+
+main {
+  padding: 40px;
+}
+
+.viewer__container {
+  display: flex;
+  justify-content: center;
+}
+
+.viewer {
+  width: 400px;
+}
+
+.viewer__header {
+  margin-bottom: 10px;
+}
+
+.viewer__header__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  padding-left: 8px;
+}
+
+.btn_clear {
+  all: unset;
+  background-color: transparent;
+  color: var(--main-txt-color);
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.viewer__header__text > input {
+  padding: 8px 14px;
+  border-radius: 4px;
+  border: 0;
+  width: 100%;
+  color: var(--main-txt-color);
+}
+
+.viewer__contents {
+  margin: 10px 0;
+}
+
+.viewer__file__container {
+  display: none;
+}
+
+.viewer__file__container > input[type='file'] {
+  display: none;
+}
+
+.viewer__file {
+  display: block;
+  padding: 10px 14px;
+  background-color: var(--sub-color);
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.viewer__images {
+  border-radius: 4px;
+  height: 500px;
+  background: #333437;
+}
+
+.viewer__total {
+  text-align: right;
+  color: var(--main-txt-color);
+}
+
+.viewer__total__number {
+  margin-left: 4px;
+  color: white;
 }
