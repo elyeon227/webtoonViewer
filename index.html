@@ -10,10 +10,9 @@
     <header>
       <h1 class="header__logo">JPG Viewer</h1>
       <div class="header__columns">
-        <button type="button" class="active">1</button>
-        <button type="button">2</button>
-        <button type="button">3</button>
-        <button type="button">4</button>
+        <button type="button" disabled><i class="xi xi-minus-min"></i></button>
+        <span>1</span>
+        <button type="button"><i class="xi xi-plus-min"></i></button>
       </div>
       <div class="header__outline">
         <span>Outline</span>
@@ -28,36 +27,45 @@
     </header>
     <main>
       <div class="viewer__container">
-        <div class="viewer">
-          <div class="viewer__header">
-            <div class="viewer__header__title">
-              <h3>Title</h3>
-              <button type="button" class="btn_clear">
-                <i class="xi xi-trash"></i>&nbsp;Clear All
-              </button>
-            </div>
-            <div class="viewer__header__text">
-              <input type="text" placeholder="제목을 입력하세요." />
-            </div>
-          </div>
-          <div class="viewer__contents">
-            <div class="viewer__file__container">
-              <label class="viewer__file" for="imgFile">
-                <i class="xi xi-plus-min"></i>&nbsp;Open Images
-              </label>
-              <input type="file" id="imgFile" />
-            </div>
+        <table>
+          <tbody>
+            <tr class="viewer__header__title">
+              <td>
+                <button type="button" class="btn_clear">
+                  <i class="xi xi-trash"></i>&nbsp;Clear All
+                </button>
+              </td>
+            </tr>
+            <tr class="viewer__header__text">
+              <td>
+                <input type="text" class="viewer__title__input" placeholder="제목을 입력하세요." />
+              </td>
+            </tr>
+            <tr class="viewer__file__container">
+              <td>
+                <label class="viewer__file" for="imgFile">
+                  <i class="xi xi-plus-min"></i>&nbsp;Open Images
+                </label>
+                <input type="file" id="imgFile" class="upload" multiple />
+              </td>
+            </tr>
 
-            <div class="viewer__images"></div>
-          </div>
+            <tr>
+              <td>
+                <div class="viewer__images"></div>
+              </td>
+            </tr>
 
-          <div class="viewer__footer">
-            <div class="viewer__total">
-              <span>Total</span>
-              <span class="viewer__total__number">20</span>
-            </div>
-          </div>
-        </div>
+            <tr>
+              <td>
+                <div class="viewer__total">
+                  <span>Total</span>
+                  <span class="viewer__total__number">20</span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </main>
   </body>

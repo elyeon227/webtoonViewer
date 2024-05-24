@@ -39,15 +39,32 @@ header {
 
 .header__columns {
   display: flex;
+  align-items: center;
+}
+
+.header__columns > span {
+  margin: 0 8px;
+  padding: 0 4px;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background: var(--sub-color);
+  text-align: center;
+  font-size: 16px;
 }
 
 .header__columns > button {
-  width: 26px;
-  height: 26px;
+  width: 20px;
+  height: 20px;
   padding: 0;
   border: 0;
   background-color: var(--main-bg-color);
   color: var(--main-color);
+  cursor: pointer;
+}
+
+.header__columns > button:disabled {
+  color: var(--main-bg-color);
 }
 
 .header__columns > button.active {
@@ -109,20 +126,21 @@ main {
   justify-content: center;
 }
 
-.viewer {
+.viewer__container > table {
+  border-collapse: separate;
+  border-spacing: 0 8px;
+}
+
+.viewer__container > table td {
   width: 400px;
 }
 
-.viewer__header {
-  margin-bottom: 10px;
-}
-
-.viewer__header__title {
+.viewer__header__title > td {
   display: flex;
-  justify-content: space-between;
+  justify-content: right;
   align-items: center;
-  margin-bottom: 5px;
-  padding-left: 8px;
+  /* margin-bottom: 5px; */
+  /* padding-left: 8px; */
 }
 
 .btn_clear {
@@ -134,7 +152,7 @@ main {
   cursor: pointer;
 }
 
-.viewer__header__text > input {
+.viewer__header__text input {
   padding: 8px 14px;
   border-radius: 4px;
   border: 0;
@@ -147,10 +165,9 @@ main {
 }
 
 .viewer__file__container {
-  display: none;
 }
 
-.viewer__file__container > input[type='file'] {
+.viewer__file__container input[type='file'] {
   display: none;
 }
 
@@ -164,12 +181,14 @@ main {
 }
 
 .viewer__images {
+  display: none;
   border-radius: 4px;
   height: 500px;
   background: #333437;
 }
 
 .viewer__total {
+  display: none;
   text-align: right;
   color: var(--main-txt-color);
 }
