@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Webtton Viewer</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
   </head>
   <body>
     <header>
       <h1 class="header__logo">JPG Viewer</h1>
       <div class="header__columns">
-        <button type="button" disabled><i class="xi xi-minus-min"></i></button>
+        <button type="button" class="remove"><i class="xi xi-minus-min"></i></button>
         <span>1</span>
-        <button type="button"><i class="xi xi-plus-min"></i></button>
+        <button type="button" class="add"><i class="xi xi-plus-min"></i></button>
       </div>
       <div class="header__outline">
         <span>Outline</span>
@@ -60,7 +61,7 @@
               <td>
                 <div class="viewer__total">
                   <span>Total</span>
-                  <span class="viewer__total__number">20</span>
+                  <span class="viewer__total__number">0</span>
                 </div>
               </td>
             </tr>

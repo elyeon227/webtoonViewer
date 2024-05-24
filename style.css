@@ -136,9 +136,9 @@ main {
 }
 
 .viewer__header__title > td {
-  display: flex;
+  /* display: flex;
   justify-content: right;
-  align-items: center;
+  align-items: center; */
   /* margin-bottom: 5px; */
   /* padding-left: 8px; */
 }
@@ -181,14 +181,14 @@ main {
 }
 
 .viewer__images {
-  display: none;
+  /* display: none; */
   border-radius: 4px;
   height: 500px;
   background: #333437;
 }
 
 .viewer__total {
-  display: none;
+  /* display: none; */
   text-align: right;
   color: var(--main-txt-color);
 }
