@@ -5,15 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Webtton Viewer</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <script src="main.js" defer></script>
   </head>
   <body>
     <header>
       <h1 class="header__logo">JPG Viewer</h1>
       <div class="header__columns">
-        <button type="button" class="remove"><i class="xi xi-minus-min"></i></button>
+        <button type="button" class="remove"><i class="fa fa-minus"></i></button>
         <span>1</span>
-        <button type="button" class="add"><i class="xi xi-plus-min"></i></button>
+        <button type="button" class="add"><i class="fa fa-plus"></i></button>
       </div>
       <div class="header__outline">
         <span>Outline</span>
@@ -38,11 +45,11 @@
             <tr class="viewer__file__container fix">
               <td>
                 <label class="viewer__file viewer__file_1" for="imgFile_1">
-                  <i class="xi xi-plus-min"></i>&nbsp;Open Images
+                  <i class="fa fa-plus"></i>&nbsp;Open Images
                 </label>
                 <input type="file" id="imgFile_1" name="image_1" class="upload" multiple />
                 <button type="button" class="remove btn_clear btn_clear_1 hide">
-                  <i class="xi xi-trash"></i>&nbsp;Clear All
+                  <i class="fa fa-trash-can"></i>&nbsp;Clear All
                 </button>
               </td>
             </tr>
@@ -67,8 +74,8 @@
     </main>
     <footer>
       <div class="btn_upanddown">
-        <button type="button" class="up"><i class="xi xi-angle-up-min"></i></button
-        ><button type="button" class="down"><i class="xi xi-angle-down-min"></i></button>
+        <button type="button" class="up"><i class="fa fa-angle-up"></i></button
+        ><button type="button" class="down"><i class="fa fa-angle-down"></i></button>
       </div>
     </footer>
   </body>

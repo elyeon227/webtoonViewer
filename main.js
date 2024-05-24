@@ -25,13 +25,13 @@ function addColumn() {
       newCell.innerHTML = `<label class="viewer__file viewer__file_${
         columnCount + 1
       }" for="imgFile_${columnCount + 1}">
-      <i class="xi xi-plus-min"></i>&nbsp;Open Images
+      <i class="fa fa-plus"></i>&nbsp;Open Images
     </label>
     <input type="file" id="imgFile_${columnCount + 1}" name="image_${
         columnCount + 1
       }" class="upload" multiple />
     <button type="button" class="remove btn_clear btn_clear_${columnCount + 1} hide">
-      <i class="xi xi-trash"></i>&nbsp;Clear All
+      <i class="fa fa-trash-can"></i>&nbsp;Clear All
     </button>`;
     } else if (i === 2) {
       newCell.innerHTML = `<ul class="viewer__images viewer__images_${columnCount + 1}"></ul>`;
@@ -158,7 +158,7 @@ btnLine.addEventListener('click', e => {
 // 페이지 이동
 const upAndDown = document.querySelector('.btn_upanddown');
 upAndDown.addEventListener('click', e => {
-  if (e.target.classList.contains('down') || e.target.classList.contains('xi-angle-down-min')) {
+  if (e.target.classList.contains('down') || e.target.classList.contains('fa-angle-down')) {
     window.scrollTo({
       top: document.body.scrollHeight,
       behavior: 'smooth',
