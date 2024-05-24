@@ -254,3 +254,46 @@ main {
 .btn_upanddown > button:last-of-type {
   border-radius: 0 16px 16px 0;
 }
+
+@media only screen and (max-width: 480px) {
+  .header__columns {
+    display: none;
+  }
+
+  .viewer__header__text {
+    display: none;
+  }
+
+  .viewer__container > table tr:last-of-type {
+    display: none;
+  }
+
+  .viewer__file__container.fix {
+    top: 56px;
+  }
+
+  main {
+    padding: 0;
+    padding-top: 60px;
+  }
+
+  .viewer__container {
+    display: block;
+  }
+
+  .viewer__container > table {
+    border-spacing: 0;
+  }
+
+  .viewer__container > table td {
+    width: 100%;
+  }
+
+  .viewer__container > table ul img {
+    width: 100%;
+  }
+
+  .viewer__file {
+    width: 100vw;
+  }
+}
