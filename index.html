@@ -22,7 +22,7 @@
       </div>
       <div class="header__dark-mode">
         <span>Dark Mode</span>
-        <input type="checkbox" id="darkMode" class="header__toggle" />
+        <input type="checkbox" id="darkMode" class="header__toggle" checked />
         <label for="darkMode"></label>
       </div>
     </header>
@@ -30,36 +30,32 @@
       <div class="viewer__container">
         <table>
           <tbody>
-            <tr class="viewer__header__title">
-              <td>
-                <button type="button" class="btn_clear">
-                  <i class="xi xi-trash"></i>&nbsp;Clear All
-                </button>
-              </td>
-            </tr>
-            <tr class="viewer__header__text">
+            <tr class="viewer__header__text fix">
               <td>
                 <input type="text" class="viewer__title__input" placeholder="제목을 입력하세요." />
               </td>
             </tr>
-            <tr class="viewer__file__container">
+            <tr class="viewer__file__container fix">
               <td>
-                <label class="viewer__file" for="imgFile">
+                <label class="viewer__file viewer__file_1" for="imgFile_1">
                   <i class="xi xi-plus-min"></i>&nbsp;Open Images
                 </label>
-                <input type="file" id="imgFile" class="upload" multiple />
+                <input type="file" id="imgFile_1" name="image_1" class="upload" multiple />
+                <button type="button" class="remove btn_clear btn_clear_1 hide">
+                  <i class="xi xi-trash"></i>&nbsp;Clear All
+                </button>
               </td>
             </tr>
 
             <tr>
               <td>
-                <div class="viewer__images"></div>
+                <ul class="viewer__images viewer__images_1"></ul>
               </td>
             </tr>
 
             <tr>
               <td>
-                <div class="viewer__total">
+                <div class="viewer__total viewer__total_1 hide">
                   <span>Total</span>
                   <span class="viewer__total__number">0</span>
                 </div>
@@ -69,5 +65,11 @@
         </table>
       </div>
     </main>
+    <footer>
+      <div class="btn_upanddown">
+        <button type="button" class="up"><i class="xi xi-angle-up-min"></i></button
+        ><button type="button" class="down"><i class="xi xi-angle-down-min"></i></button>
+      </div>
+    </footer>
   </body>
 </html>

@@ -26,11 +26,17 @@ body {
 }
 
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 56px;
   border-bottom: 12px solid var(--sub-bg-color);
+  background: var(--main-bg-color);
 }
 
 .header__logo {
@@ -119,6 +125,7 @@ header {
 
 main {
   padding: 40px;
+  padding-top: 80px;
 }
 
 .viewer__container {
@@ -128,19 +135,33 @@ main {
 
 .viewer__container > table {
   border-collapse: separate;
-  border-spacing: 0 8px;
+  border-spacing: 8px 8px;
+}
+
+.viewer__container > table > tbody {
+  position: relative;
+}
+
+.fix {
+  position: sticky;
+  z-index: 99;
+}
+
+.viewer__header__text.fix {
+  top: 56px;
+}
+
+.viewer__file__container.fix {
+  top: 88px;
 }
 
 .viewer__container > table td {
   width: 400px;
 }
 
-.viewer__header__title > td {
-  /* display: flex;
-  justify-content: right;
-  align-items: center; */
-  /* margin-bottom: 5px; */
-  /* padding-left: 8px; */
+.viewer__container > table ul img {
+  vertical-align: top;
+  width: 400px;
 }
 
 .btn_clear {
@@ -148,13 +169,11 @@ main {
   background-color: transparent;
   color: var(--main-txt-color);
   padding: 5px 10px;
-  border-radius: 10px;
   cursor: pointer;
 }
 
 .viewer__header__text input {
   padding: 8px 14px;
-  border-radius: 4px;
   border: 0;
   width: 100%;
   color: var(--main-txt-color);
@@ -175,16 +194,28 @@ main {
   display: block;
   padding: 10px 14px;
   background-color: var(--sub-color);
-  border-radius: 4px;
   color: white;
   cursor: pointer;
+}
+
+.btn_clear {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  background-color: var(--sub-color);
+  color: white;
+  cursor: pointer;
+  box-sizing: border-box;
 }
 
 .viewer__images {
   /* display: none; */
   border-radius: 4px;
-  height: 500px;
   background: #333437;
+}
+
+.viewer__images.line > li {
+  border-bottom: 1px solid darkgray;
 }
 
 .viewer__total {
@@ -196,4 +227,30 @@ main {
 .viewer__total__number {
   margin-left: 4px;
   color: white;
+}
+
+.hide {
+  display: none;
+}
+
+.btn_upanddown {
+  position: fixed;
+  right: 20px;
+  bottom: 10px;
+}
+
+.btn_upanddown > button {
+  all: unset;
+  padding: 4px 12px;
+  background: #f3f3f3;
+  font-size: 20px;
+  color: var(--main-txt-color);
+  cursor: pointer;
+}
+
+.btn_upanddown > button:first-of-type {
+  border-radius: 16px 0 0 16px;
+}
+.btn_upanddown > button:last-of-type {
+  border-radius: 0 16px 16px 0;
 }
