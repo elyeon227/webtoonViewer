@@ -25,13 +25,13 @@ function addColumn() {
       newCell.innerHTML = `<label class="viewer__file viewer__file_${
         columnCount + 1
       }" for="imgFile_${columnCount + 1}">
-      <i class="fa fa-plus"></i>&nbsp;Open Images
+      <i class="fa fas fa-upload"></i>&nbsp;&nbsp;Open Images
     </label>
     <input type="file" id="imgFile_${columnCount + 1}" name="image_${
         columnCount + 1
       }" class="upload" multiple />
     <button type="button" class="remove btn_clear btn_clear_${columnCount + 1} hide">
-      <i class="fa fa-trash-can"></i>&nbsp;Clear All
+      <i class="fa fa-trash"></i>&nbsp;&nbsp;Clear All
     </button>`;
     } else if (i === 2) {
       newCell.innerHTML = `<ul class="viewer__images viewer__images_${columnCount + 1}"></ul>`;
