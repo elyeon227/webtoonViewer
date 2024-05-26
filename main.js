@@ -141,18 +141,17 @@ async function logImagesData(fileList, cellIndex) {
 }
 
 // 구분선 on/off
-const btnLine = document.querySelector('#outline');
+const btnLine = document.querySelector('.header__toggle');
 btnLine.addEventListener('click', e => {
-  const uls = document.querySelectorAll('ul');
-  if (e.target.checked) {
-    uls.forEach(el => {
-      el.classList.add('line');
-    });
+  if (e.target.classList.contains('on')) {
+    e.target.innerHTML = '구분선 OFF';
   } else {
-    uls.forEach(el => {
-      el.classList.remove('line');
-    });
+    e.target.innerHTML = '구분선 ON';
   }
+  const uls = document.querySelectorAll('ul');
+  uls.forEach(el => {
+    el.classList.toggle('line');
+  });
 });
 
 // 페이지 이동

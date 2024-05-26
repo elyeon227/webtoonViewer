@@ -7,7 +7,7 @@
   --main-color: #f3f3f3;
   --sub-color: #2c7dfa;
 
-  --main-bg-color: #1e1f22;
+  --main-bg-color: #1e1e20;
   --sub-bg-color: #2b2c2f;
 
   --main-txt-color: #767e8b;
@@ -56,16 +56,17 @@ header {
   border-radius: 4px;
   background: var(--sub-color);
   text-align: center;
-  font-size: 16px;
+  font-size: 20px;
+  line-height: 20px;
 }
 
 .header__columns > button {
-  width: 20px;
-  height: 20px;
+  margin: 0 4px;
   padding: 0;
   border: 0;
   background-color: var(--main-bg-color);
   color: var(--main-color);
+  font-size: 14px;
   cursor: pointer;
 }
 
@@ -85,9 +86,11 @@ header {
 }
 
 .header__toggle {
-  height: 0;
-  width: 0;
-  visibility: hidden;
+  all: unset;
+  background: var(--sub-color);
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .header__toggle + label {
@@ -236,23 +239,28 @@ main {
 .btn_upanddown {
   position: fixed;
   right: 20px;
-  bottom: 10px;
+  bottom: 50%;
 }
 
 .btn_upanddown > button {
   all: unset;
-  padding: 4px 12px;
-  background: #f3f3f3;
-  font-size: 20px;
-  color: var(--main-txt-color);
+  display: block;
+  padding: 8px;
+  width: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
   cursor: pointer;
 }
 
 .btn_upanddown > button:first-of-type {
-  border-radius: 16px 0 0 16px;
+  /* border-radius: 16px 16px 0 0; */
+  padding-bottom: 0;
 }
 .btn_upanddown > button:last-of-type {
-  border-radius: 0 16px 16px 0;
+  /* border-radius: 0 0 16px 16px; */
+  padding-top: 0;
 }
 
 @media only screen and (max-width: 480px) {
@@ -295,5 +303,9 @@ main {
 
   .viewer__file {
     width: 100vw;
+  }
+
+  .btn_upanddown {
+    display: none;
   }
 }
