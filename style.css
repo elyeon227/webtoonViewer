@@ -191,8 +191,11 @@ main {
   padding: 8px 14px;
   border: 0;
   width: 100%;
-  color: var(--main-txt-color);
+  color: var(--main-bg-color);
   font-size: 14px;
+}
+
+.viewer__header__text input::placeholder {
   font-style: italic;
 }
 
