@@ -20,7 +20,7 @@ function addColumn() {
   for (let i = 0; i < table.rows.length; i++) {
     const newCell = table.rows[i].insertCell(-1);
     if (i === 0) {
-      newCell.innerHTML = `<input type="text" class="viewer__title__input" placeholder="제목을 입력하세요." />`;
+      newCell.innerHTML = `<input type="text" class="viewer__title__input" placeholder="Please enter title." />`;
     } else if (i === 1) {
       newCell.innerHTML = `<label class="viewer__file viewer__file_${
         columnCount + 1
@@ -125,7 +125,7 @@ async function logImagesData(fileList, cellIndex) {
     const imgNum = document.querySelector(`.viewer__total_${cellIndex + 1}`);
     const uploadFile = document.querySelector(`.viewer__file_${cellIndex + 1}`);
     const btnClear = document.querySelector(`.btn_clear_${cellIndex + 1}`);
-    imagePreview.style.border = '1px solid black';
+    // imagePreview.style.border = '1px solid black';
 
     imagePreview.appendChild(preview);
 
@@ -143,11 +143,7 @@ async function logImagesData(fileList, cellIndex) {
 // 구분선 on/off
 const btnLine = document.querySelector('.header__toggle');
 btnLine.addEventListener('click', e => {
-  if (e.target.classList.contains('on')) {
-    e.target.innerHTML = '구분선 OFF';
-  } else {
-    e.target.innerHTML = '구분선 ON';
-  }
+  e.target.classList.toggle('on');
   const uls = document.querySelectorAll('ul');
   uls.forEach(el => {
     el.classList.toggle('line');
@@ -157,7 +153,7 @@ btnLine.addEventListener('click', e => {
 // 페이지 이동
 const upAndDown = document.querySelector('.btn_upanddown');
 upAndDown.addEventListener('click', e => {
-  if (e.target.classList.contains('down') || e.target.classList.contains('fa-angle-down')) {
+  if (e.target.classList.contains('down') || e.target.classList.contains('fa-chevron-down')) {
     window.scrollTo({
       top: document.body.scrollHeight,
       behavior: 'smooth',

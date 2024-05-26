@@ -5,12 +5,12 @@
 
 :root {
   --main-color: #f3f3f3;
-  --sub-color: #2c7dfa;
+  --sub-color: #f4a353;
 
   --main-bg-color: #1e1e20;
   --sub-bg-color: #2b2c2f;
 
-  --main-txt-color: #767e8b;
+  --main-txt-color: #a5a5a5;
 
   --main-font: 'Raleway';
 }
@@ -22,7 +22,7 @@
 body {
   background: var(--main-bg-color);
   font-family: var(--main-font);
-  color: var(--main-color);
+  color: #1e1e20;
 }
 
 header {
@@ -34,13 +34,19 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 56px;
+  height: 58px;
   border-bottom: 12px solid var(--sub-bg-color);
   background: var(--main-bg-color);
 }
 
 .header__logo {
   font-size: 20px;
+  color: #f3f3f3;
+  font-weight: lighter;
+}
+
+.header__logo > span {
+  font-weight: bold;
 }
 
 .header__columns {
@@ -51,12 +57,12 @@ header {
 .header__columns > span {
   margin: 0 8px;
   padding: 0 4px;
-  width: 20px;
-  height: 20px;
-  border-radius: 4px;
-  background: var(--sub-color);
+  width: 24px;
+  height: 24px;
+  color: var(--sub-color);
   text-align: center;
   font-size: 20px;
+  font-weight: bold;
   line-height: 20px;
 }
 
@@ -66,7 +72,7 @@ header {
   border: 0;
   background-color: var(--main-bg-color);
   color: var(--main-color);
-  font-size: 14px;
+  font-size: 12px;
   cursor: pointer;
 }
 
@@ -87,10 +93,16 @@ header {
 
 .header__toggle {
   all: unset;
-  background: var(--sub-color);
   padding: 4px 8px;
   border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
   cursor: pointer;
+  color: var(--main-color);
+}
+
+.header__toggle.on {
+  color: var(--sub-color);
 }
 
 .header__toggle + label {
@@ -112,7 +124,7 @@ header {
   left: 0px;
   width: 20px;
   height: 20px;
-  background: #fff;
+  background: #1e1e20;
   border-radius: 90px;
   transition: 0.3s;
 }
@@ -180,6 +192,8 @@ main {
   border: 0;
   width: 100%;
   color: var(--main-txt-color);
+  font-size: 14px;
+  font-style: italic;
 }
 
 .viewer__contents {
@@ -197,8 +211,13 @@ main {
   display: block;
   padding: 10px 14px;
   background-color: var(--sub-color);
-  color: white;
+  color: #1e1e20;
   cursor: pointer;
+  font-size: 14px;
+}
+
+.viewer__file > i {
+  font-size: 12px;
 }
 
 .btn_clear {
@@ -206,9 +225,14 @@ main {
   width: 100%;
   padding: 10px 14px;
   background-color: var(--sub-color);
-  color: white;
+  color: #1e1e20;
   cursor: pointer;
   box-sizing: border-box;
+  font-size: 14px;
+}
+
+.btn_clear > i {
+  font-size: 12px;
 }
 
 .viewer__images {
@@ -218,7 +242,7 @@ main {
 }
 
 .viewer__images.line > li {
-  border-bottom: 1px solid darkgray;
+  border-bottom: 2px solid #f4a353;
 }
 
 .viewer__total {
@@ -229,7 +253,8 @@ main {
 
 .viewer__total__number {
   margin-left: 4px;
-  color: white;
+  color: #f3f3f3;
+  font-weight: bold;
 }
 
 .hide {
@@ -247,23 +272,24 @@ main {
   display: block;
   padding: 8px;
   width: 20px;
-  background: rgba(0, 0, 0, 0.8);
-  font-size: 18px;
-  color: #fff;
+  font-size: 14px;
+  color: #f3f3f3;
   text-align: center;
   cursor: pointer;
 }
 
 .btn_upanddown > button:first-of-type {
   /* border-radius: 16px 16px 0 0; */
-  padding-bottom: 0;
 }
 .btn_upanddown > button:last-of-type {
   /* border-radius: 0 0 16px 16px; */
-  padding-top: 0;
 }
 
 @media only screen and (max-width: 480px) {
+  header {
+    justify-content: space-between;
+    padding: 0 14px;
+  }
   .header__columns {
     display: none;
   }
@@ -282,7 +308,7 @@ main {
 
   main {
     padding: 0;
-    padding-top: 60px;
+    padding-top: 56px;
   }
 
   .viewer__container {

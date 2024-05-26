@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Webtton Viewer</title>
-    <link rel="icon" href="bear.ico" type="image/x-icon" />
+    <link rel="icon" href="bear2.ico" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -17,14 +17,14 @@
   </head>
   <body>
     <header>
-      <h1 class="header__logo">JPG Viewer</h1>
+      <h1 class="header__logo"><span>WEBTOON</span> Viewer</h1>
       <div class="header__columns">
         <button type="button" class="remove"><i class="fa fa-minus"></i></button>
         <span>1</span>
         <button type="button" class="add"><i class="fa fa-plus"></i></button>
       </div>
       <div class="header__outline">
-        <button type="button" class="header__toggle">구분선 ON</button>
+        <button type="button" class="header__toggle">Outline</button>
       </div>
     </header>
     <main>
@@ -33,17 +33,17 @@
           <tbody>
             <tr class="viewer__header__text fix">
               <td>
-                <input type="text" class="viewer__title__input" placeholder="제목을 입력하세요." />
+                <input type="text" class="viewer__title__input" placeholder="Please enter title." />
               </td>
             </tr>
             <tr class="viewer__file__container fix">
               <td>
                 <label class="viewer__file viewer__file_1" for="imgFile_1">
-                  <i class="fa fa-plus"></i>&nbsp;Open Images
+                  <i class="fa fas fa-upload"></i>&nbsp;&nbsp;Open Images
                 </label>
                 <input type="file" id="imgFile_1" name="image_1" class="upload" multiple />
                 <button type="button" class="remove btn_clear btn_clear_1 hide">
-                  <i class="fa fa-trash-can"></i>&nbsp;Clear All
+                  <i class="fa fa-trash"></i>&nbsp;&nbsp;Clear All
                 </button>
               </td>
             </tr>
@@ -68,8 +68,8 @@
     </main>
     <footer>
       <div class="btn_upanddown">
-        <button type="button" class="up"><i class="fa fa-caret-up"></i></button
-        ><button type="button" class="down"><i class="fa fa-caret-down"></i></button>
+        <button type="button" class="up"><i class="fa fas fa-chevron-up"></i></button
+        ><button type="button" class="down"><i class="fa fa-chevron-down"></i></button>
       </div>
     </footer>
   </body>
