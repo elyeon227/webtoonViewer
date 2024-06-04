@@ -288,6 +288,23 @@ main {
   /* border-radius: 0 0 16px 16px; */
 }
 
+/* 스크롤바 스타일 */
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--main-bg-color);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--sub-color);
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
 @media only screen and (max-width: 480px) {
   header {
     justify-content: space-between;
