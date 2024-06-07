@@ -141,12 +141,22 @@ async function logImagesData(fileList, cellIndex) {
 }
 
 // 구분선 on/off
-const btnLine = document.querySelector('.header__toggle');
-btnLine.addEventListener('click', e => {
+// const btnLine = document.querySelector('.header__toggle');
+// btnLine.addEventListener('click', e => {
+//   e.target.classList.toggle('on');
+//   const uls = document.querySelectorAll('ul');
+//   uls.forEach(el => {
+//     el.classList.toggle('line');
+//   });
+// });
+
+// split on/off
+const btnSplit = document.querySelector('.header__toggle__split');
+btnSplit.addEventListener('click', e => {
   e.target.classList.toggle('on');
   const uls = document.querySelectorAll('ul');
   uls.forEach(el => {
-    el.classList.toggle('line');
+    el.classList.toggle('split');
   });
 });
 

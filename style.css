@@ -248,6 +248,10 @@ main {
   border-bottom: 2px solid #f4a353;
 }
 
+.viewer__images.split > li {
+  margin-bottom: 10px;
+}
+
 .viewer__total {
   /* display: none; */
   text-align: right;
