@@ -242,6 +242,8 @@ main {
   /* display: none; */
   border-radius: 4px;
   background: #333437;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .viewer__images.line > li {
@@ -306,6 +308,18 @@ body::-webkit-scrollbar-thumb {
 }
 
 body::-webkit-scrollbar {
+  width: 10px;
+}
+
+.viewer__images::-webkit-scrollbar-button {
+  display: none;
+}
+
+.viewer__images::-webkit-scrollbar-thumb {
+  background-color: var(--sub-color);
+}
+
+.viewer__images::-webkit-scrollbar {
   width: 10px;
 }
 
