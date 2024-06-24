@@ -74,14 +74,14 @@ table.addEventListener('change', e => {
         }
         const minHeight =
           arrColumnHeight.length > 1 ? Math.min(...arrColumnHeight) : arrColumnHeight[0];
-        document.body.style.height = `${minHeight / 2}px`;
+        document.body.style.height = `${minHeight}px`;
 
         return minHeight;
       })
       .then(value => {
         const uls = document.querySelectorAll('ul');
         for (let i = 0; i < uls.length; i++) {
-          uls[i].style.maxHeight = `${value}px`;
+          uls[i].style.maxHeight = `${value * 0.95}px`;
         }
       });
   }
