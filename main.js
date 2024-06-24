@@ -59,8 +59,10 @@ function removeColumn() {
 
 // 이미지 추가
 const table = document.querySelector('table');
+const spinBox = document.querySelector('.spin');
 table.addEventListener('change', e => {
   if (e.target.classList.contains('upload')) {
+    spinBox.classList.remove('hide');
     const cellIndex = e.target.closest('td').cellIndex;
     logImagesData([...e.target.files], cellIndex)
       .then(() => {
@@ -83,6 +85,9 @@ table.addEventListener('change', e => {
         for (let i = 0; i < uls.length; i++) {
           uls[i].style.maxHeight = `${value * 0.95}px`;
         }
+      })
+      .then(() => {
+        spinBox.classList.add('hide');
       });
   }
 });
