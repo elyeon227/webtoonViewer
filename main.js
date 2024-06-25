@@ -67,23 +67,29 @@ table.addEventListener('change', e => {
     logImagesData([...e.target.files], cellIndex)
       .then(() => {
         const viewerImages = document.querySelectorAll('.viewer__images');
-        const arrColumnHeight = [];
-        for (let i = 0; i < viewerImages.length; i++) {
-          if (viewerImages[i].clientHeight === 0) {
-            continue;
+        if (viewerImages.length > 1) {
+          const arrColumnHeight = [];
+          for (let i = 0; i < viewerImages.length; i++) {
+            if (viewerImages[i].clientHeight === 0) {
+              continue;
+            }
+            arrColumnHeight.push(viewerImages[i].clientHeight);
           }
-          arrColumnHeight.push(viewerImages[i].clientHeight);
-        }
-        const minHeight =
-          arrColumnHeight.length > 1 ? Math.min(...arrColumnHeight) : arrColumnHeight[0];
-        document.body.style.height = `${minHeight}px`;
+          const minHeight =
+            arrColumnHeight.length > 1 ? Math.min(...arrColumnHeight) : arrColumnHeight[0];
+          document.body.style.height = `${minHeight}px`;
 
-        return minHeight;
+          return minHeight;
+        } else {
+          return;
+        }
       })
       .then(value => {
-        const uls = document.querySelectorAll('ul');
-        for (let i = 0; i < uls.length; i++) {
-          uls[i].style.maxHeight = `${value * 0.95}px`;
+        if (value) {
+          const uls = document.querySelectorAll('ul');
+          for (let i = 0; i < uls.length; i++) {
+            uls[i].style.maxHeight = `${value * 0.95}px`;
+          }
         }
       })
       .then(() => {
