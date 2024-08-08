@@ -25,6 +25,10 @@ body {
   color: #1e1e20;
 }
 
+body.bright {
+  background: var(--main-color);
+}
+
 header {
   position: fixed;
   top: 0;
@@ -282,9 +286,13 @@ main {
   padding: 8px;
   width: 20px;
   font-size: 14px;
-  color: #f3f3f3;
+  color: var(--main-color);
   text-align: center;
   cursor: pointer;
+}
+
+.btn_upanddown.bright > button {
+  color: var(--main-bg-color);
 }
 
 .btn_upanddown > button:first-of-type {

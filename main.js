@@ -207,3 +207,21 @@ upAndDown.addEventListener('click', e => {
     });
   }
 });
+
+// bright mode
+const btnTheme = document.querySelector('.header__toggle__theme');
+const viewerImages = document.querySelectorAll('.viewer__images');
+btnTheme.addEventListener('click', e => {
+  if (e.target.classList.contains('fa-sun') || e.target.classList.contains('fa-moon')) {
+    e.target.parentElement.classList.toggle('on');
+    e.target.classList.toggle('fa-sun');
+    e.target.classList.toggle('fa-moon');
+  } else {
+    e.target.classList.toggle('on');
+    console.log(e.target);
+    e.target.children[0].classList.toggle('fa-sun');
+    e.target.children[0].classList.toggle('fa-moon');
+  }
+  upAndDown.classList.toggle('bright');
+  document.body.classList.toggle('bright');
+});
