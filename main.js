@@ -34,7 +34,9 @@ function addColumn() {
       <i class="fa fa-trash"></i>&nbsp;&nbsp;Clear All
     </button>`;
     } else if (i === 2) {
-      newCell.innerHTML = `<ul class="viewer__images viewer__images_${columnCount + 1}"></ul>`;
+      newCell.innerHTML = `<ul data-theme="dark" class="viewer__images viewer__images_${
+        columnCount + 1
+      }"></ul>`;
     } else if (i === 3) {
       newCell.innerHTML = `<div class="viewer__total viewer__total_${columnCount + 1} hide">
       <span>Total</span>
@@ -210,18 +212,23 @@ upAndDown.addEventListener('click', e => {
 
 // bright mode
 const btnTheme = document.querySelector('.header__toggle__theme');
-const viewerImages = document.querySelectorAll('.viewer__images');
 btnTheme.addEventListener('click', e => {
-  if (e.target.classList.contains('fa-sun') || e.target.classList.contains('fa-moon')) {
+  const viewerImages = document.querySelectorAll('.viewer__images');
+  if (e.target.classList.contains('fa-sun')) {
     e.target.parentElement.classList.toggle('on');
-    e.target.classList.toggle('fa-sun');
-    e.target.classList.toggle('fa-moon');
   } else {
     e.target.classList.toggle('on');
-    console.log(e.target);
-    e.target.children[0].classList.toggle('fa-sun');
-    e.target.children[0].classList.toggle('fa-moon');
   }
   upAndDown.classList.toggle('bright');
   document.body.classList.toggle('bright');
+
+  if (document.body.classList.contains('bright')) {
+    for (let i = 0; i < viewerImages.length; i++) {
+      viewerImages[i].dataset.theme = 'bright';
+    }
+  } else {
+    for (let i = 0; i < viewerImages.length; i++) {
+      viewerImages[i].dataset.theme = 'dark';
+    }
+  }
 });

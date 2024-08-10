@@ -250,6 +250,10 @@ main {
   overflow-x: hidden;
 }
 
+.viewer__images[data-theme='bright'] {
+  background: var(--main-color);
+}
+
 .viewer__images.line > li {
   border-bottom: 2px solid #f4a353;
 }
@@ -268,6 +272,10 @@ main {
   margin-left: 4px;
   color: #f3f3f3;
   font-weight: bold;
+}
+
+body.bright .viewer__total__number {
+  color: var(--main-bg-color);
 }
 
 .hide {
@@ -309,6 +317,14 @@ main {
 
 ::-webkit-scrollbar-track {
   background-color: var(--main-bg-color);
+}
+
+ul[data-theme='bright']::-webkit-scrollbar-track {
+  background-color: var(--main-color);
+}
+
+body.bright::-webkit-scrollbar-track {
+  background-color: var(--main-color);
 }
 
 body::-webkit-scrollbar-thumb {
