@@ -12,6 +12,10 @@ btnRemove.addEventListener('click', e => {
 });
 
 function addColumn() {
+  // lock toggle 비활성화
+  const btnLock = document.querySelector('.header__toggle__lock');
+  btnLock.classList.remove('on');
+
   const table = document.querySelector('table');
   const columnCount = table.rows[0].cells.length;
   if (columnCount > 3) {
@@ -192,6 +196,24 @@ btnSplit.addEventListener('click', e => {
   uls.forEach(el => {
     el.classList.toggle('split');
   });
+});
+
+// 스크롤 비활성화
+const btnLock = document.querySelector('.header__toggle__lock');
+btnLock.addEventListener('click', e => {
+  e.currentTarget.classList.toggle('on');
+  const viewerImages = document.querySelectorAll('.viewer__images');
+  if (e.currentTarget.classList.contains('on')) {
+    viewerImages.forEach(el => {
+      el.style.overflow = 'hidden';
+    });
+  } else {
+    viewerImages.forEach(el => {
+      if (el.clientHeight > 0) {
+        el.style.overflow = 'scroll';
+      }
+    });
+  }
 });
 
 // 페이지 이동
