@@ -210,7 +210,7 @@ btnLock.addEventListener('click', e => {
   } else {
     viewerImages.forEach(el => {
       if (el.clientHeight > 0) {
-        el.style.overflow = 'scroll';
+        el.style.overflow = 'auto';
       }
     });
   }
