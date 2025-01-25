@@ -83,18 +83,23 @@ table.addEventListener('change', e => {
           }
           const minHeight =
             arrColumnHeight.length > 1 ? Math.min(...arrColumnHeight) : arrColumnHeight[0];
-          document.body.style.height = `${minHeight}px`;
+          // document.body.style.height = `${minHeight}px`;
+          const isEnd = viewerImages.length === arrColumnHeight.length;
+          const result = [minHeight, isEnd];
 
-          return minHeight;
+          return result;
         } else {
           return;
         }
       })
       .then(value => {
         if (value) {
-          const uls = document.querySelectorAll('ul');
-          for (let i = 0; i < uls.length; i++) {
-            uls[i].style.maxHeight = `${value * 0.95}px`;
+          const [minHeight, isEnd] = value;
+          if (isEnd) {
+            const uls = document.querySelectorAll('ul');
+            for (let i = 0; i < uls.length; i++) {
+              uls[i].style.height = `${minHeight}px`;
+            }
           }
         }
       })
