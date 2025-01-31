@@ -5,7 +5,8 @@
 
 :root {
   --main-color: #f3f3f3;
-  --sub-color: #f4a353;
+  /* --sub-color: #f4a353; */
+  --sub-color: gray;
 
   --main-bg-color: #1e1e20;
   --sub-bg-color: #2b2c2f;
@@ -44,9 +45,17 @@ header {
 }
 
 .header__logo {
-  font-size: 20px;
+  display: flex;
+  justify-self: center;
+  align-items: center;
   color: #f3f3f3;
+  font-size: 20px;
   font-weight: lighter;
+}
+
+.header__logo > img {
+  width: 30px;
+  padding-right: 4px;
 }
 
 .header__logo > span {
@@ -255,7 +264,7 @@ main {
 }
 
 .viewer__images.line > li {
-  border-bottom: 2px solid #f4a353;
+  border-bottom: 2px solid var(--sub-color);
 }
 
 .viewer__images.split > li {
